@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interstellar movie details, cast, synopsis, trailers, and similar recommendations on MovieMatch.">
+  <title>Interstellar (2014) | MovieMatch</title>
+
+  <!-- Google Fonts: Poppins & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar" role="banner">
+    <div class="container">
+      
+      <!-- Logo / Brand -->
+      <a href="index.html" class="nav-brand" aria-label="MovieMatch Home">
+        <span class="brand-icon"><i class="fa-solid fa-film"></i></span>
+        Movie<span class="brand-highlight">Match</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="movies.html" class="nav-link active">Movies</a>
+        <a href="index.html#genres" class="nav-link">Genres</a>
+        <a href="watchlist.html" class="nav-link nav-watchlist-link">
+          Watchlist
+          <span class="watchlist-badge" aria-label="Watchlist Count">3</span>
+        </a>
+      </nav>
+
+      <!-- Right Actions (Search & Profile) -->
+      <div class="nav-right">
+        <!-- Search Redirect Form -->
+        <form action="movies.html" method="GET" class="nav-search-form" role="search">
+          <i class="fa-solid fa-magnifying-glass nav-search-btn" aria-hidden="true"></i>
+          <input 
+            type="text" 
+            name="search" 
+            class="nav-search-input" 
+            placeholder="Search movies..." 
+            aria-label="Search movies"
+          >
+        </form>
+
+        <!-- User Profile Icon Button -->
+        <a href="watchlist.html" class="user-profile-btn" aria-label="User Watchlist Profile" title="My Profile & Watchlist">
+          <i class="fa-solid fa-circle-user"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT
+       ========================================================================= -->
+  <main class="main-content">
+
+    <!-- -----------------------------------------------------------------------
+         MOVIE BACKDROP & DETAILS HEADER
+         ----------------------------------------------------------------------- -->
+    <section 
+      class="details-backdrop-hero"
+      style="background-image: url('https://image.tmdb.org/t/p/original/rAiYTsqJJR6vo0G2p4l6Tu91pfd.jpg');"
+      aria-label="Interstellar Backdrop Banner"
+    >
+      <div class="details-overlay"></div>
+      
+      <div class="container details-container">
+        
+        <!-- Left Column: Poster -->
+        <div class="details-poster-wrap">
+          <img 
+            src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" 
+            alt="Interstellar Poster" 
+            class="details-poster"
+            onerror="this.src='assets/images/placeholder.svg'"
+          >
+        </div>
+
+        <!-- Right Column: Information & Actions -->
+        <div class="details-info">
+          
+          <h1 class="details-title">Interstellar</h1>
+
+          <!-- Meta Row: Rating, Year, Runtime, Age Rating -->
+          <div class="details-meta-row">
+            <span class="rating-badge">
+              <i class="fa-solid fa-star"></i> 8.7/10
+            </span>
+            <span>2014</span>
+            <span class="meta-pill">PG-13</span>
+            <span>2h 49min</span>
+          </div>
+
+          <!-- Genre Tags -->
+          <div class="genre-tags-list">
+            <a href="movies.html?genre=Sci-Fi" class="tag">Sci-Fi</a>
+            <a href="movies.html?genre=Adventure" class="tag">Adventure</a>
+            <a href="movies.html?genre=Drama" class="tag">Drama</a>
+          </div>
+
+          <!-- Overview Synopsis -->
+          <div class="details-synopsis-box">
+            <h3>Overview</h3>
+            <p>
+              Earth's future has been riddled by disasters, famines, and droughts. A group of explorers travel through a wormhole in space in search of a new home for humanity. Led by former NASA pilot Cooper, the mission confronts uncharted cosmic frontiers and temporal physics in a race against time.
+            </p>
+          </div>
+
+          <!-- Key Crew Information -->
+          <div class="details-crew-grid">
+            <div>
+              <p class="crew-item-label">Director</p>
+              <p class="crew-item-value">Christopher Nolan</p>
+            </div>
+            <div>
+              <p class="crew-item-label">Writers</p>
+              <p class="crew-item-value">Jonathan Nolan, Christopher Nolan</p>
+            </div>
+            <div>
+              <p class="crew-item-label">Music Composer</p>
+              <p class="crew-item-value">Hans Zimmer</p>
+            </div>
+            <div>
+              <p class="crew-item-label">Box Office</p>
+              <p class="crew-item-value">$701.7 Million</p>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="details-actions-row">
+            <button 
+              class="btn btn-primary btn-lg btn-watch-trailer" 
+              data-trailer="interstellar"
+              aria-label="Watch Interstellar Trailer"
+            >
+              <i class="fa-solid fa-play"></i> Watch Trailer
+            </button>
+            
+            <button 
+              class="btn btn-secondary btn-lg btn-toggle-watchlist" 
+              data-id="interstellar"
+              data-title="Interstellar"
+              data-year="2014"
+              data-rating="8.7"
+              data-genre="Sci-Fi • Adventure"
+              data-poster="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+              aria-label="Add Interstellar to Watchlist"
+            >
+              <i class="fa-solid fa-plus"></i> Add to Watchlist
+            </button>
+
+            <a href="movies.html" class="btn btn-outline btn-lg" aria-label="Back to all movies">
+              <i class="fa-solid fa-arrow-left"></i> Back to Movies
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         CAST SECTION
+         ----------------------------------------------------------------------- -->
+    <section class="section-padding" aria-labelledby="cast-title">
+      <div class="container">
+        
+        <div class="section-header">
+          <div>
+            <h2 id="cast-title" class="section-title">Top Billed Cast</h2>
+            <p class="section-subtitle">The ensemble cast behind this epic sci-fi journey</p>
+          </div>
+        </div>
+
+        <div class="cast-grid">
+
+          <!-- Cast 1: Matthew McConaughey -->
+          <div class="cast-card">
+            <div class="cast-photo-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w300/ehoFqf2nJ7zOQGZ1i1tX8OqJb1u.jpg" 
+                alt="Matthew McConaughey" 
+                class="cast-photo"
+                loading="lazy"
+                onerror="this.src='assets/images/avatar.svg'"
+              >
+            </div>
+            <div class="cast-info">
+              <h4 class="cast-actor-name">Matthew McConaughey</h4>
+              <p class="cast-character-name">Cooper</p>
+            </div>
+          </div>
+
+          <!-- Cast 2: Anne Hathaway -->
+          <div class="cast-card">
+            <div class="cast-photo-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w300/tLelKoPNiyJCSEtQT81FGv4TLAc.jpg" 
+                alt="Anne Hathaway" 
+                class="cast-photo"
+                loading="lazy"
+                onerror="this.src='assets/images/avatar.svg'"
+              >
+            </div>
+            <div class="cast-info">
+              <h4 class="cast-actor-name">Anne Hathaway</h4>
+              <p class="cast-character-name">Amelia Brand</p>
+            </div>
+          </div>
+
+          <!-- Cast 3: Jessica Chastain -->
+          <div class="cast-card">
+            <div class="cast-photo-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w300/lodMzLKSdrbBgcaDd58Taa3pHws.jpg" 
+                alt="Jessica Chastain" 
+                class="cast-photo"
+                loading="lazy"
+                onerror="this.src='assets/images/avatar.svg'"
+              >
+            </div>
+            <div class="cast-info">
+              <h4 class="cast-actor-name">Jessica Chastain</h4>
+              <p class="cast-character-name">Murph Cooper</p>
+            </div>
+          </div>
+
+          <!-- Cast 4: Michael Caine -->
+          <div class="cast-card">
+            <div class="cast-photo-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w300/bVZRMlpjTAO2pJK6v90YVMKBmlG.jpg" 
+                alt="Michael Caine" 
+                class="cast-photo"
+                loading="lazy"
+                onerror="this.src='assets/images/avatar.svg'"
+              >
+            </div>
+            <div class="cast-info">
+              <h4 class="cast-actor-name">Michael Caine</h4>
+              <p class="cast-character-name">Professor Brand</p>
+            </div>
+          </div>
+
+          <!-- Cast 5: Matt Damon -->
+          <div class="cast-card">
+            <div class="cast-photo-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w300/elSlNg0W222psBnx9Pq6Fk9iY7W.jpg" 
+                alt="Matt Damon" 
+                class="cast-photo"
+                loading="lazy"
+                onerror="this.src='assets/images/avatar.svg'"
+              >
+            </div>
+            <div class="cast-info">
+              <h4 class="cast-actor-name">Matt Damon</h4>
+              <p class="cast-character-name">Dr. Mann</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SIMILAR MOVIES SECTION
+         ----------------------------------------------------------------------- -->
+    <section class="section-padding section-alt" aria-labelledby="similar-title">
+      <div class="container">
+        
+        <div class="section-header">
+          <div>
+            <h2 id="similar-title" class="section-title">Similar Movies</h2>
+            <p class="section-subtitle">If you enjoyed Interstellar, you will love these cinematic journeys</p>
+          </div>
+          <a href="movies.html?genre=Sci-Fi" class="view-all-link">
+            More Sci-Fi <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="movie-grid">
+
+          <!-- Similar 1: Inception -->
+          <article class="movie-card">
+            <div class="movie-poster-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg" 
+                alt="Inception Poster" 
+                class="movie-poster"
+                loading="lazy"
+                onerror="this.src='assets/images/placeholder.svg'"
+              >
+              <div class="rating-badge">
+                <i class="fa-solid fa-star"></i> 8.8
+              </div>
+              <div class="movie-overlay">
+                <div class="overlay-actions">
+                  <a href="movie-details.html" class="overlay-btn overlay-btn-view">
+                    <i class="fa-solid fa-circle-info"></i> View Details
+                  </a>
+                  <button 
+                    class="overlay-btn overlay-btn-watchlist btn-toggle-watchlist"
+                    data-id="inception"
+                    data-title="Inception"
+                    data-year="2010"
+                    data-rating="8.8"
+                    data-genre="Action • Sci-Fi"
+                    data-poster="https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg"
+                  >
+                    <i class="fa-solid fa-plus"></i> Watchlist
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Inception</h3>
+              <div class="movie-meta">
+                <span>2010</span>
+                <span class="movie-genre">Action • Sci-Fi</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Similar 2: Dune -->
+          <article class="movie-card">
+            <div class="movie-poster-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" 
+                alt="Dune Poster" 
+                class="movie-poster"
+                loading="lazy"
+                onerror="this.src='assets/images/placeholder.svg'"
+              >
+              <div class="rating-badge">
+                <i class="fa-solid fa-star"></i> 8.0
+              </div>
+              <div class="movie-overlay">
+                <div class="overlay-actions">
+                  <a href="movie-details.html" class="overlay-btn overlay-btn-view">
+                    <i class="fa-solid fa-circle-info"></i> View Details
+                  </a>
+                  <button 
+                    class="overlay-btn overlay-btn-watchlist btn-toggle-watchlist"
+                    data-id="dune"
+                    data-title="Dune"
+                    data-year="2021"
+                    data-rating="8.0"
+                    data-genre="Sci-Fi • Adventure"
+                    data-poster="https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg"
+                  >
+                    <i class="fa-solid fa-plus"></i> Watchlist
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Dune</h3>
+              <div class="movie-meta">
+                <span>2021</span>
+                <span class="movie-genre">Sci-Fi • Adventure</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Similar 3: Blade Runner 2049 -->
+          <article class="movie-card">
+            <div class="movie-poster-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg" 
+                alt="Blade Runner 2049 Poster" 
+                class="movie-poster"
+                loading="lazy"
+                onerror="this.src='assets/images/placeholder.svg'"
+              >
+              <div class="rating-badge">
+                <i class="fa-solid fa-star"></i> 8.0
+              </div>
+              <div class="movie-overlay">
+                <div class="overlay-actions">
+                  <a href="movie-details.html" class="overlay-btn overlay-btn-view">
+                    <i class="fa-solid fa-circle-info"></i> View Details
+                  </a>
+                  <button 
+                    class="overlay-btn overlay-btn-watchlist btn-toggle-watchlist"
+                    data-id="bladerunner-2049"
+                    data-title="Blade Runner 2049"
+                    data-year="2017"
+                    data-rating="8.0"
+                    data-genre="Sci-Fi • Mystery"
+                    data-poster="https://image.tmdb.org/t/p/w500/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg"
+                  >
+                    <i class="fa-solid fa-plus"></i> Watchlist
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Blade Runner 2049</h3>
+              <div class="movie-meta">
+                <span>2017</span>
+                <span class="movie-genre">Sci-Fi • Mystery</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Similar 4: Oppenheimer -->
+          <article class="movie-card">
+            <div class="movie-poster-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg" 
+                alt="Oppenheimer Poster" 
+                class="movie-poster"
+                loading="lazy"
+                onerror="this.src='assets/images/placeholder.svg'"
+              >
+              <div class="rating-badge">
+                <i class="fa-solid fa-star"></i> 8.9
+              </div>
+              <div class="movie-overlay">
+                <div class="overlay-actions">
+                  <a href="movie-details.html" class="overlay-btn overlay-btn-view">
+                    <i class="fa-solid fa-circle-info"></i> View Details
+                  </a>
+                  <button 
+                    class="overlay-btn overlay-btn-watchlist btn-toggle-watchlist"
+                    data-id="oppenheimer"
+                    data-title="Oppenheimer"
+                    data-year="2023"
+                    data-rating="8.9"
+                    data-genre="Biography • Drama"
+                    data-poster="https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg"
+                  >
+                    <i class="fa-solid fa-plus"></i> Watchlist
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Oppenheimer</h3>
+              <div class="movie-meta">
+                <span>2023</span>
+                <span class="movie-genre">Biography • Drama</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Similar 5: The Dark Knight -->
+          <article class="movie-card">
+            <div class="movie-poster-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" 
+                alt="The Dark Knight Poster" 
+                class="movie-poster"
+                loading="lazy"
+                onerror="this.src='assets/images/placeholder.svg'"
+              >
+              <div class="rating-badge">
+                <i class="fa-solid fa-star"></i> 9.0
+              </div>
+              <div class="movie-overlay">
+                <div class="overlay-actions">
+                  <a href="movie-details.html" class="overlay-btn overlay-btn-view">
+                    <i class="fa-solid fa-circle-info"></i> View Details
+                  </a>
+                  <button 
+                    class="overlay-btn overlay-btn-watchlist btn-toggle-watchlist"
+                    data-id="the-dark-knight"
+                    data-title="The Dark Knight"
+                    data-year="2008"
+                    data-rating="9.0"
+                    data-genre="Action • Crime"
+                    data-poster="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+                  >
+                    <i class="fa-solid fa-plus"></i> Watchlist
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">The Dark Knight</h3>
+              <div class="movie-meta">
+                <span>2008</span>
+                <span class="movie-genre">Action • Crime</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       3. VIDEO TRAILER MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="trailerModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Interstellar - Official Trailer</h3>
+        <button class="modal-close-btn" aria-label="Close Trailer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-video-wrapper">
+        <iframe 
+          src="" 
+          title="Interstellar Trailer" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       4. FOOTER
+       ========================================================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      
+      <div class="footer-top">
+        
+        <!-- Brand Info -->
+        <div class="footer-brand-info">
+          <a href="index.html" class="nav-brand">
+            <span class="brand-icon"><i class="fa-solid fa-film"></i></span>
+            Movie<span class="brand-highlight">Match</span>
+          </a>
+          <p class="footer-desc">
+            Your personal destination for discovering movies. Explore what's trending, find recommendations by genre, and track your cinematic journey.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-column-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="movies.html" class="footer-link">Movies</a></li>
+            <li><a href="index.html#genres" class="footer-link">Genres</a></li>
+            <li><a href="watchlist.html" class="footer-link">Watchlist</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <h4 class="footer-column-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="movies.html?genre=Action" class="footer-link">Action</a></li>
+            <li><a href="movies.html?genre=Sci-Fi" class="footer-link">Sci-Fi</a></li>
+            <li><a href="movies.html?genre=Drama" class="footer-link">Drama</a></li>
+            <li><a href="movies.html?genre=Thriller" class="footer-link">Thriller</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="footer-column-title">Connect</h4>
+          <div class="footer-social-list">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>© 2026 MovieMatch. All rights reserved.</p>
+        <p>Built with HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View and manage your saved movies on your MovieMatch watchlist.">
+  <title>My Watchlist | MovieMatch</title>
+
+  <!-- Google Fonts: Poppins & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/logo.svg">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. NAVIGATION BAR
+       ========================================================================= -->
+  <header class="navbar" role="banner">
+    <div class="container">
+      
+      <!-- Logo / Brand -->
+      <a href="index.html" class="nav-brand" aria-label="MovieMatch Home">
+        <span class="brand-icon"><i class="fa-solid fa-film"></i></span>
+        Movie<span class="brand-highlight">Match</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="movies.html" class="nav-link">Movies</a>
+        <a href="index.html#genres" class="nav-link">Genres</a>
+        <a href="watchlist.html" class="nav-link nav-watchlist-link active">
+          Watchlist
+          <span class="watchlist-badge" aria-label="Watchlist Count">3</span>
+        </a>
+      </nav>
+
+      <!-- Right Actions (Search & Profile) -->
+      <div class="nav-right">
+        <!-- Search Input -->
+        <form action="movies.html" method="GET" class="nav-search-form" role="search">
+          <i class="fa-solid fa-magnifying-glass nav-search-btn" aria-hidden="true"></i>
+          <input 
+            type="text" 
+            name="search" 
+            class="nav-search-input" 
+            placeholder="Search movies..." 
+            aria-label="Search movies"
+          >
+        </form>
+
+        <!-- User Profile Icon Button -->
+        <a href="watchlist.html" class="user-profile-btn" aria-label="User Watchlist Profile" title="My Profile & Watchlist">
+          <i class="fa-solid fa-circle-user"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="nav-toggle-btn" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT
+       ========================================================================= -->
+  <main class="main-content">
+
+    <!-- Page Header Banner -->
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-title">My Watchlist</h1>
+        <p class="page-subtitle">Your personalized collection of movies saved for movie night</p>
+      </div>
+    </section>
+
+    <!-- Watchlist Section -->
+    <section class="section-padding">
+      <div class="container">
+        
+        <!-- Watchlist Toolbar Controls -->
+        <div class="watchlist-toolbar">
+          <div class="watchlist-stats">
+            <span id="watchlistCount">3 movies saved</span>
+          </div>
+          
+          <div>
+            <button class="btn btn-outline btn-sm" id="clearWatchlistBtn">
+              <i class="fa-solid fa-trash-can"></i> Clear All
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Movies Container (populated by script.js) -->
+        <div class="movie-grid" id="watchlistContainer">
+
+          <!-- Static Fallback / Seed Item 1: Interstellar -->
+          <article class="movie-card" data-id="interstellar">
+            <div class="movie-poster-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" 
+                alt="Interstellar Poster" 
+                class="movie-poster"
+                onerror="this.src='assets/images/placeholder.svg'"
+              >
+              <div class="rating-badge">
+                <i class="fa-solid fa-star"></i> 8.7
+              </div>
+              <div class="movie-overlay">
+                <div class="overlay-actions">
+                  <a href="movie-details.html" class="overlay-btn overlay-btn-view">
+                    <i class="fa-solid fa-circle-info"></i> View Details
+                  </a>
+                  <button 
+                    class="overlay-btn overlay-btn-watchlist remove-from-watchlist-btn" 
+                    data-id="interstellar" 
+                    data-title="Interstellar"
+                  >
+                    <i class="fa-solid fa-trash"></i> Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Interstellar</h3>
+              <div class="movie-meta">
+                <span>2014</span>
+                <span class="movie-genre">Sci-Fi • Adventure</span>
+              </div>
+              <div class="watchlist-card-actions">
+                <a href="movie-details.html" class="btn btn-outline btn-sm">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </a>
+                <button 
+                  class="btn btn-danger btn-sm remove-from-watchlist-btn" 
+                  data-id="interstellar" 
+                  data-title="Interstellar"
+                >
+                  <i class="fa-solid fa-trash"></i> Remove
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Static Fallback / Seed Item 2: Inception -->
+          <article class="movie-card" data-id="inception">
+            <div class="movie-poster-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg" 
+                alt="Inception Poster" 
+                class="movie-poster"
+                onerror="this.src='assets/images/placeholder.svg'"
+              >
+              <div class="rating-badge">
+                <i class="fa-solid fa-star"></i> 8.8
+              </div>
+              <div class="movie-overlay">
+                <div class="overlay-actions">
+                  <a href="movie-details.html" class="overlay-btn overlay-btn-view">
+                    <i class="fa-solid fa-circle-info"></i> View Details
+                  </a>
+                  <button 
+                    class="overlay-btn overlay-btn-watchlist remove-from-watchlist-btn" 
+                    data-id="inception" 
+                    data-title="Inception"
+                  >
+                    <i class="fa-solid fa-trash"></i> Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Inception</h3>
+              <div class="movie-meta">
+                <span>2010</span>
+                <span class="movie-genre">Action • Sci-Fi</span>
+              </div>
+              <div class="watchlist-card-actions">
+                <a href="movie-details.html" class="btn btn-outline btn-sm">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </a>
+                <button 
+                  class="btn btn-danger btn-sm remove-from-watchlist-btn" 
+                  data-id="inception" 
+                  data-title="Inception"
+                >
+                  <i class="fa-solid fa-trash"></i> Remove
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Static Fallback / Seed Item 3: Dune -->
+          <article class="movie-card" data-id="dune">
+            <div class="movie-poster-wrap">
+              <img 
+                src="https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" 
+                alt="Dune Poster" 
+                class="movie-poster"
+                onerror="this.src='assets/images/placeholder.svg'"
+              >
+              <div class="rating-badge">
+                <i class="fa-solid fa-star"></i> 8.0
+              </div>
+              <div class="movie-overlay">
+                <div class="overlay-actions">
+                  <a href="movie-details.html" class="overlay-btn overlay-btn-view">
+                    <i class="fa-solid fa-circle-info"></i> View Details
+                  </a>
+                  <button 
+                    class="overlay-btn overlay-btn-watchlist remove-from-watchlist-btn" 
+                    data-id="dune" 
+                    data-title="Dune"
+                  >
+                    <i class="fa-solid fa-trash"></i> Remove
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Dune</h3>
+              <div class="movie-meta">
+                <span>2021</span>
+                <span class="movie-genre">Sci-Fi • Adventure</span>
+              </div>
+              <div class="watchlist-card-actions">
+                <a href="movie-details.html" class="btn btn-outline btn-sm">
+                  <i class="fa-solid fa-circle-info"></i> Details
+                </a>
+                <button 
+                  class="btn btn-danger btn-sm remove-from-watchlist-btn" 
+                  data-id="dune" 
+                  data-title="Dune"
+                >
+                  <i class="fa-solid fa-trash"></i> Remove
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Attractive Empty Watchlist State (Toggled dynamically by script.js) -->
+        <div class="empty-watchlist-container" id="emptyWatchlist">
+          <div class="empty-watchlist-icon">
+            <i class="fa-solid fa-film"></i>
+          </div>
+          <h2 class="empty-watchlist-title">No movies in your watchlist yet</h2>
+          <p class="empty-watchlist-desc">
+            Start exploring and save movies you want to watch later by clicking the watchlist button on any movie card.
+          </p>
+          <a href="movies.html" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-compass"></i> Explore Movies
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       3. FOOTER
+       ========================================================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      
+      <div class="footer-top">
+        
+        <!-- Brand Info -->
+        <div class="footer-brand-info">
+          <a href="index.html" class="nav-brand">
+            <span class="brand-icon"><i class="fa-solid fa-film"></i></span>
+            Movie<span class="brand-highlight">Match</span>
+          </a>
+          <p class="footer-desc">
+            Your personal destination for discovering movies. Explore what's trending, find recommendations by genre, and track your cinematic journey.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-column-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="movies.html" class="footer-link">Movies</a></li>
+            <li><a href="index.html#genres" class="footer-link">Genres</a></li>
+            <li><a href="watchlist.html" class="footer-link">Watchlist</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <h4 class="footer-column-title">Categories</h4>
+          <ul class="footer-links">
+            <li><a href="movies.html?genre=Action" class="footer-link">Action</a></li>
+            <li><a href="movies.html?genre=Sci-Fi" class="footer-link">Sci-Fi</a></li>
+            <li><a href="movies.html?genre=Drama" class="footer-link">Drama</a></li>
+            <li><a href="movies.html?genre=Thriller" class="footer-link">Thriller</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="footer-column-title">Connect</h4>
+          <div class="footer-social-list">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>© 2026 MovieMatch. All rights reserved.</p>
+        <p>Built with HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>
